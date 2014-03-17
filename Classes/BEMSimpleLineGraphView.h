@@ -155,6 +155,9 @@
 
 @property (strong, nonatomic) UIColor *colorDot;
 
+// Defaults to YES.
+@property (nonatomic) BOOL shouldHideDots;
+
 
 
 @end

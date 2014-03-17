@@ -18,9 +18,15 @@
         [UIView animateWithDuration:0.5 delay:dotIndex/(speed*2.0) options:UIViewAnimationOptionCurveEaseOut animations:^{
             circleDot.alpha = 0.7;
         } completion:^(BOOL finished){
-            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                circleDot.alpha = 0;
-            } completion:nil];
+            BOOL shouldHide = YES;
+            if ([self.delegate respondsToSelector:@selector(animationDelegateShouldHideDot:)]) {
+                shouldHide = [self.delegate animationDelegateShouldHideDot:self];
+            }
+            if (shouldHide) {
+                [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                    circleDot.alpha = 0;
+                } completion:nil];
+            }
         }];
     }
 }

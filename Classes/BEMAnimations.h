@@ -22,8 +22,11 @@
 #import "BEMLine.h"
 
 
-
+@class BEMAnimations;
 @protocol BEMAnimationDelegate <NSObject>
+
+@optional
+- (BOOL)animationDelegateShouldHideDot:(BEMAnimations *)animationDelegate;
 
 @end
 

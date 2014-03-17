@@ -103,6 +103,7 @@
     _widthLine = 1.0;
     _enableTouchReport = NO;
     _enableBezierCurve = NO;
+    _shouldHideDots = YES;
     
     // Initialize the arrays
     xAxisValues = [NSMutableArray array];
@@ -616,6 +617,12 @@
     }
     
     return minValue;
+}
+
+#pragma mark - BEMAnimationDelegate Methods
+
+- (BOOL)animationDelegateShouldHideDot:(BEMAnimations *)animationDelegate {
+    return self.shouldHideDots;
 }
 
 #pragma mark - Other Methods
