@@ -104,6 +104,7 @@
     _enableTouchReport = NO;
     _enableBezierCurve = NO;
     _shouldHideDots = YES;
+    _dotDiameter = circleSize;
     
     // Initialize the arrays
     xAxisValues = [NSMutableArray array];
@@ -164,7 +165,7 @@
 
 - (void)drawGraph {
     if (numberOfPoints <= 1) { // Exception if there is only one point.
-        BEMCircle *circleDot = [[BEMCircle alloc] initWithFrame:CGRectMake(0, 0, circleSize, circleSize)];
+        BEMCircle *circleDot = [[BEMCircle alloc] initWithFrame:CGRectMake(0, 0, self.dotDiameter, self.dotDiameter)];
         circleDot.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
         circleDot.alpha = 0.7;
         [self addSubview:circleDot];
@@ -219,7 +220,7 @@
             if (minValue == maxValue) positionOnYAxis = self.frame.size.height/2;
             else positionOnYAxis = (self.frame.size.height - padding) - ((dotValue - minValue) / ((maxValue - minValue) / (self.frame.size.height - padding))) + 30;
             
-            BEMCircle *circleDot = [[BEMCircle alloc] initWithFrame:CGRectMake(0, 0, circleSize, circleSize)];
+            BEMCircle *circleDot = [[BEMCircle alloc] initWithFrame:CGRectMake(0, 0, self.dotDiameter, self.dotDiameter)];
             circleDot.dotColor = self.colorDot;
             circleDot.center = CGPointMake(positionOnXAxis, positionOnYAxis);
             circleDot.tag = i+100;

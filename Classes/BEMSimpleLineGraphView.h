@@ -158,6 +158,8 @@
 // Defaults to YES.
 @property (nonatomic) BOOL shouldHideDots;
 
+@property (nonatomic) CGFloat dotDiameter;
+
 
 
 @end
