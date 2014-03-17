@@ -25,5 +25,6 @@
 @interface BEMCircle : UIView
 
 @property (assign, nonatomic) BOOL shouldDisplayConstantly;
+@property (strong, nonatomic) UIColor *dotColor;
 
 @end

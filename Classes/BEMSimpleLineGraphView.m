@@ -219,6 +219,7 @@
             else positionOnYAxis = (self.frame.size.height - padding) - ((dotValue - minValue) / ((maxValue - minValue) / (self.frame.size.height - padding))) + 30;
             
             BEMCircle *circleDot = [[BEMCircle alloc] initWithFrame:CGRectMake(0, 0, circleSize, circleSize)];
+            circleDot.dotColor = self.colorDot;
             circleDot.center = CGPointMake(positionOnXAxis, positionOnYAxis);
             circleDot.tag = i+100;
             circleDot.alpha = 0;

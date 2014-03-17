@@ -153,6 +153,8 @@
 /// Color of the label's text displayed on the X-Axis.
 @property (strong, nonatomic) UIColor *colorXaxisLabel;
 
+@property (strong, nonatomic) UIColor *colorDot;
+
 
 
 @end
